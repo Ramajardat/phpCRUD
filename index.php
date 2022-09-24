@@ -13,8 +13,8 @@
     <form action="index.php" method="POST">
         <br>
         <h2>Cars Inf.</h2> <br>
-        <input type="text" name="name" placeholder="Name " required>
-        <input type="text" name="image" placeholder="Image " required>
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="image" placeholder="Image" required>
         <input type="number" name="model" placeholder="Model" required>
         <input type="number" name="price" placeholder="price" required>
         <input type="text" name="color" placeholder="color" required>
@@ -30,12 +30,13 @@
                 <p><?php echo $car['color']; ?></p>
                 <p><?php echo $car['price']; ?>$</p>
                 <div class="buttons">
-                    <button class="edit"> Edit</button>
-                    <button class="delete">Delete</button>
+                    <a href="update.php?id=<?php echo htmlentities($car['carID']); ?>"><button>Edit</button></a>
+                    <a href="delete.php?del=<?php echo htmlentities($car['carID']); ?>"><button onClick="return confirm('Do you really want to delete');">Delete</button></a>
                 </div>
             </div>
         <?php } ?>
     </div>
+
 
 </body>
 
