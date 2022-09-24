@@ -32,12 +32,11 @@ try {
 }
 ?>
 <?php try {
-    // $sql = $conn->prepare('SELECT * FROM cars_info');
-    // $sql->execute();
+   
     $sql = $conn->query('SELECT * FROM carsinfo');
     $Cars = $sql->fetchAll();
     echo '<pre>';
-    // print_r($allCars);
+    // print_r($Cars);
     echo '</pre>';
 } catch (Exception $e) {
     echo $e->getMessage();
